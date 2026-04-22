@@ -1,0 +1,3 @@
+# README
+
+Individual Flask project.
