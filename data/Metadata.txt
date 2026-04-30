@@ -1,0 +1,10 @@
+URL: https://huggingface.co/datasets/WorkWithData/Stolen_Artworks
+
+Date Downloaded: Apr 8th 8:00PM
+
+Authorship: workwithdata.com (Deprecated)
+            Interpol
+
+Artists.csv
+Made by Clark Glymph using Python to make new csv
+Date Created: 4/21/2026

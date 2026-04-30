@@ -1,3 +1,4 @@
 # Collaboration
 
-Put any sources (not included in the assignment) that you referenced in doing this assignment. This includes: websites, people you consulted, and (where sanctioned) GenAI prompts and chatlogs. Include a brief sentence on how you used each resource.
+The only sources I used for this assignment were in class materials
+I also used google to read about how to use 'assertIN' function for tests.
