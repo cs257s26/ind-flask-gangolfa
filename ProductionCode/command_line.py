@@ -3,8 +3,8 @@ import sys
 from pathlib import Path
 
 # Get the directory of this script
-DEFAULT_DATA_PATH = Path(__file__).parent.parent/'data'/'interpol_classified_stolen_art.csv'
-ARTIST_DATA_PATH = Path(__file__).parent.parent/'data'/'artists.csv'
+DEFAULT_DATA_PATH = Path(__file__).parent/'data'/'interpol_classified_stolen_art.csv'
+ARTIST_DATA_PATH = Path(__file__).parent/'data'/'artists.csv'
 
 def load_data(data_path) -> list:
     """Returns a list of the provided csv file.

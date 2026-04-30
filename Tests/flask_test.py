@@ -37,7 +37,7 @@ class TestSOMETHING(unittest.TestCase):
     def test_get_creator(self):
         self.app = app.test_client() 
         response = self.app.get('/artwork:Mickey Mouse', follow_redirects=True)
-        self.assertEqual(b'The creator of Mickey Mouse is Andy Warhol', response)
+        self.assertEqual(b'The creator of Mickey Mouse is Andy Warhol', response.data)
 
     # This function tests that 404 error returns the correct message
     def test_page_not_found(self):
