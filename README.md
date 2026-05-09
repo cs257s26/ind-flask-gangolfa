@@ -18,10 +18,10 @@ When you run app.py you will be greated by the following text:
 
     Welcome to the Art Tracker
     1. To find stolen count by a given artist, enter:
-    http://127.0.0.1:5100/artist/[ARTIST_NAME]
+    http://127.0.0.1:5100/artist:[ARTIST_NAME]
 
     2. To find artist of a given artwork, enter:
-    http://127.0.0.1:5100/artwork/[ARTWORK_TITLE]
+    http://127.0.0.1:5100/artwork:[ARTWORK_TITLE]
 
 Some examples of artists and artwork to search for are as follows:
 
