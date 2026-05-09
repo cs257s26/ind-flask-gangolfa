@@ -1,6 +1,9 @@
-"""psycopg2-sample.py
+"""
+datasource.py
+CS 257 - Software Design
+Code taken from sample from intro-db-lab
 
-Sample code demonstrating how to use the psycopg2 Python library to 
+Uses se the psycopg2 Python library to 
 connect to a database and execute a query.
 """
 
@@ -43,7 +46,7 @@ def get_artwork_given_origin(connection, origin: str) -> list:
         return None
     
 def get_artwork_given_artist(connection, artist: str) -> list:
-    """Retrieves all artowrk (and all the other information associated with an artwork) given an artist.
+    """Retrieves all artwork (and all the other information associated with an artwork) given an artist.
 
     Args:
         connection (psycopg2.connection) - the connection to the database
@@ -66,7 +69,7 @@ def main():
     # Connect to the database
     connection = connect()
 
-    # Execute a simple query: how many artists have an origin of the United Kingdom?
+    # How many artists have an origin of the United Kingdom?
     results = get_artwork_given_origin(connection, 'United Kingdom')
     
     if results is not None :
@@ -75,7 +78,7 @@ def main():
         print(results)
         print()
 
-    # Execute a simple query: how many artists have an origin of the United Kingdom?
+    # How many artworks were made by Gustav Klimt?
     results = get_artwork_given_artist(connection, 'Gustav Klimt')
     
     if results is not None :
