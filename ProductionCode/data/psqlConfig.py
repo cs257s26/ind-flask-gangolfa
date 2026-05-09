@@ -1,3 +1,3 @@
-user = 'hillygangolf'
-database = 'hillygangolf'
-password = 'Sadie5942!'
+user = 'gangolfa'
+database = 'gangolfa'
+password = 'sign849redm'
