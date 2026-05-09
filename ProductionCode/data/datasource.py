@@ -23,15 +23,15 @@ def connect():
         exit()
     return connection
 
-def get_artists_given_origin(connection, origin: str) -> list:
-    """Retrieves all artists (and all the other information associated with an artist) given their country of origin.
+def get_artwork_given_origin(connection, origin: str) -> list:
+    """Retrieves all artwork (and all the other information associated with an artwork and its artist) given the artist's country of origin.
 
     Args:
         connection (psycopg2.connection) - the connection to the database
-        temp (float) - the minimum high temperature
+        origin (str) - the country of origin
 
     Returns:
-        list - a list of all dates where the high temperature is greater or equal to temp, or None if the query fails.
+        list - a list of all artwork with an artist from the desired origin.
     """
     try:
         cursor = connection.cursor()
@@ -47,7 +47,7 @@ def get_artwork_given_artist(connection, artist: str) -> list:
 
     Args:
         connection (psycopg2.connection) - the connection to the database
-        temp (float) - the minimum high temperature
+        artist (str) - the artist being searched for
 
     Returns:
         list - a list of artwork by a given artist.
@@ -66,14 +66,21 @@ def main():
     # Connect to the database
     connection = connect()
 
-    # Execute a simple query: how many earthquakes above the specified magnitude are there in the data?
-    results = get_artists_given_origin(connection, 'United Kingdom')
-    
+    # Execute a simple query: how many artists have an origin of the United Kingdom?
+    results = get_artwork_given_origin(connection, 'United Kingdom')
     
     if results is not None :
-        print("Query results: ")
-        for item in results:
-            print(item)
+        print()
+        print("------------------ Origin Query results ------------------")
+        print(results)
+        print()
+
+    # Execute a simple query: how many artists have an origin of the United Kingdom?
+    results = get_artwork_given_artist(connection, 'Gustav Klimt')
+    
+    if results is not None :
+        print("------------------ Artist Query results ------------------")
+        print(results)
 
     # Disconnect from database
     connection.close()
