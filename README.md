@@ -1,32 +1,42 @@
 # README
 
-CS257: Software Design
-Hilly Gangolf
+CS257: Software Design\
+Hilly Gangolf\
+Spring 2026\
+Git Repo: ind-flask-gangolfa
 
 ## Database Individual Deliverable | May 8, 2026
 
-# How to run Interpol data set:
+#### Write up:
+I decided to represent my data using the same columns and headings that were in the original csv file. All of the columns were very important to the project as a whole, so I did not want to change them. Aside from removing headers, there were no other superfluous detials to remove.\
+The queries I created for this assignment are central to the theme of exploring stolen artwork
+- **get_artwork_given_origin(connection, origin)** --> My first query returns informations reguarding stolen artwork made by a given artist. This relates to the fourth user story for our team deliverable. It would be useful for those doing research into a specific artist, or for someone who wants to know what artist is most often stolen.
+- **get_artwork_given_artist(connection, artist)** --> My second query returns all stolen artwork given a country of origin. This relates to the second user story we wrote for our team deliverable, and could help someone doing art research that is specific to a certain country or region.
 
-- psql -f createtable.sql
-- psql
-- \copy interpol_data FROM 'interpol_art.csv' DELIMITER ',' CSV
+#### How to run data set:
+The files createtable.sql and datasource.py are located in the ProductionCode/Data directory
+- First, navigate to the correct directory:\
+cd ProductionCode/data
+- First, create the data tables:\
+psql -f createtable.sql
+- My data is split into two data sets, so both will need to be copied:\
+\copy interpol_data FROM 'interpol_art.csv' DELIMITER ',' CSV\
+\copy artist_data FROM 'artists.csv' DELIMITER ',' CSV
+- Then run:\
+python3 datasource.py
+- Further editing of **origin** and **artist** variables in datasource.py can be done in order to adjust what data is returned. 
 
-# How to run artist data set:
-
-- psql -f createtable.sql
-- psql
-- \copy artist_data FROM 'artists.csv' DELIMITER ',' CSV
 
 ## Flask Individual Deliverable | April 29, 2026
 
-# Important files:
+#### Important files:
 
 - app.py: program for running flask application
 - Tests/flask_test.py: a program for testing my flask app
 - ProductionCode/command_line.py
 - ProductionCode/Data/artists.csv & Data/interpol_classified_stolen_art.csv: data files taken from my team project
 
-# How to Run
+#### How to Run
 
 When you run app.py you will be greated by the following text:
 
