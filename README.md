@@ -1,9 +1,23 @@
 # README
 
 CS257: Software Design
-Flask Individual Deliverable
 Hilly Gangolf
-April 29, 2026
+
+## Database Individual Deliverable | May 8, 2026
+
+# How to run Interpol data set:
+
+- psql -f createtable.sql
+- psql
+- \copy interpol_data FROM 'interpol_art.csv' DELIMITER ',' CSV
+
+# How to run artist data set:
+
+- psql -f createtable.sql
+- psql
+- \copy artist_data FROM 'artists.csv' DELIMITER ',' CSV
+
+## Flask Individual Deliverable | April 29, 2026
 
 # Important files:
 
