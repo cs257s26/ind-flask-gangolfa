@@ -14,12 +14,6 @@ class TestCommandLines(unittest.TestCase):
         self.assertEqual(find_creator("asdfasdfadf"), None)
         self.assertRaises(TypeError, find_creator, 1)
 
-    #def test_find_artwork(self):
-        #self.assertEqual(find_artwork("René Magritte"), ["Les Bijoux Indiscrets", "Moments Inoubliables Du Cinema", "Bust Of A Soldier", "Morning Promises"])
-
-        #self.assertEqual(find_artwork("asdfasdfadf"), [])
-        #self.assertRaises(TypeError, find_artwork, 1)
-
     def test_valid_count_origin(self):
         self.assertEqual(origin_count("France"), "The number of artists with stolen art who are from France: 10")
         self.assertEqual(origin_count("Mexico"), "The number of artists with stolen art who are from Mexico: 1")

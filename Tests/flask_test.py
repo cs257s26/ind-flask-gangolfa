@@ -30,13 +30,13 @@ class TestSOMETHING(unittest.TestCase):
     # This function tests that get_count_stolen_by_artist returns the correct value
     def test_get_count_stolen_by_artist(self):
         self.app = app.test_client() 
-        response = self.app.get('/artist:Andy Warhol', follow_redirects=True)
+        response = self.app.get('/artist/Andy Warhol', follow_redirects=True)
         self.assertEqual(b'The number of Andy Warhol works that have been stolen is 40', response.data )
 
     # This function tests that get_creator returns the correct value
     def test_get_creator(self):
         self.app = app.test_client() 
-        response = self.app.get('/artwork:Mickey Mouse', follow_redirects=True)
+        response = self.app.get('/artwork/Mickey Mouse', follow_redirects=True)
         self.assertEqual(b'The creator of Mickey Mouse is Andy Warhol', response.data)
 
     # This function tests that 404 error returns the correct message

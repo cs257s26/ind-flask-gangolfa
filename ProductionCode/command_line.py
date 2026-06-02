@@ -51,7 +51,7 @@ def find_creator(name_of_artwork: str) -> str:
     return None
 
 def origin_count(origin: str) -> str:
-    """Returns the number of artist in total from given orgin
+    """Returns the number of artist in total from given origin
 
     Args:
         orgin (str): the country of artist's orgin 

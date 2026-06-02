@@ -31,13 +31,13 @@ def homepage():
 
 # This route is used to call count_stolen_by_artists() function
 # Returns a string including the number of stolen works
-@app.route('/artist:<string:artist>')
+@app.route('/artist/<string:artist>')
 def get_count_stolen_by_artist(artist:str) -> int:
     return f"The number of {artist} works that have been stolen is " + str(count_stolen_by_artist(artist))
 
 # This route is used to call find_creator() function
-# Returns a string includig the creator of an artwrork
-@app.route('/artwork:<string:artwork>')
+# Returns a string including the creator of an artwrork
+@app.route('/artwork/<string:artwork>')
 def get_creator(artwork: str):
     return f"The creator of {artwork} is " + find_creator(artwork)
 
