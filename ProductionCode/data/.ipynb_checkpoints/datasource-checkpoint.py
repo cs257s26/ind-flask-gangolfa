@@ -30,7 +30,7 @@ def connect():
     return connection
 
 def get_artwork_given_origin(connection, origin: str) -> int:
-    """Retrieves a count of artwork stolen from a given country of origin.
+    """Retrieves all artwork (and all the other information associated with an artwork and its artist) given the artist's country of origin.
 
     Args:
         connection (psycopg2.connection) - the connection to the database
@@ -49,7 +49,7 @@ def get_artwork_given_origin(connection, origin: str) -> int:
         return None
     
 def get_artwork_given_artist(connection, artist: str) -> list:
-    """Retrieves artist (and all the other information associated with an artwork) given an artwork.
+    """Retrieves all artwork (and all the other information associated with an artwork) given an artist.
 
     Args:
         connection (psycopg2.connection) - the connection to the database
@@ -91,3 +91,4 @@ def main():
     # Disconnect from database
     connection.close()
 
+main()

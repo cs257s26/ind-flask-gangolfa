@@ -22,31 +22,26 @@ def homepage():
     instructions = """
     <h1>Welcome to the Art Tracker</h1>
     <p>1. To find stolen count by a given artist, enter: <br>
-    http://[Host][Port]/artist/ARTIST_NAME</p>
+    http://[port number]/artist/ARTIST_NAME</p>
     
     <p>2. To find artist of a given artwork, enter: <br>
-    http://[Host][Port]/artwork/ARTWORK_TITLE</p>
+    http://[port]/artwork/ARTWORK_TITLE</p>
     """
     return instructions
 
 # This route is used to call count_stolen_by_artists() function
 # Returns a string including the number of stolen works
 @app.route('/origin/<string:origin>')
-def return_artwork_given_origin(origin:str) -> int:
+def get_artwork_given_origin(origin:str) -> int:
     connection = connect()
-    result = str(get_artwork_given_origin(connection, origin)[0][0])
-    return f"The number of works that have been stolen from {origin} is " + result
-
+    return f"The number of works that have been stolen from {origin} is " + str(get_artwork_given_origin(connection, origin))
 
 # This route is used to call find_creator() function
 # Returns a string including the creator of an artwrork
 @app.route('/artist/<string:artist>')
-def return_artwork_given_artist(artist: str):
+def get_artwork_given_artist(artist: str):
     connection = connect()
-    result = get_artwork_given_artist(connection, artist)
-    titles = [item[0] for item in result]
-
-    return f"The following works by {artist} have been stolen: <br>" + "<br>".join(titles)
+    return f"{artist} is the creator of" + get_artwork_given_artist(connection, artist)
 
 # This route is used to handle page_not_found errors
 # It returns a string with helpful advice for the user
@@ -61,14 +56,5 @@ def python_bug(e):
     return "Something went wrong in our Python code"
 
 if __name__ == '__main__':
-    # Default port if none is provided
-    port = 5000 
-    
-    # Check if an argument was passed
-    if len(sys.argv) > 1:
-        try:
-            port = int(sys.argv[1])
-        except ValueError:
-            print("Port must be a valid integer. Using default port 5000.")
-
-    app.run(port=port, host="stearns.mathcs.carleton.edu")
+    port = 5159
+    app.run(port=port,host="stearns.mathcs.carleton.edu")
