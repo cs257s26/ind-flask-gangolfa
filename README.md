@@ -52,24 +52,26 @@ The queries I created for this assignment are central to the theme of exploring 
 - app.py: program for running flask application
 - command_line.py: contains functions that retrieve infromation from datasets given a set of arguments
 - flask_test.py: a program for testing my flask app
-- command_line_tests.py: a program for testing my command line arguments
+- command_line_test.py: a program for testing my command line arguments
 - artists.csv & interpol_art.csv: data files taken from my team project
 
 ### How to run tests
 
-Command line tests:
+command_line_test.py: tests that functions in command_line.py function correctly
 
 <pre>
-python3 -m Tests.command_line_tests
+python3 -m unittest Tests.command_line_test
 </pre>
 
-Flask app test:
+flask_test.py: tests that app.py function correctly
 
 <pre>
-python3 -m Tests.flask_test
+python3 -m unittest Tests.flask_test
 </pre>
 
 #### How to run app
+
+app.py: the flask app that runs the webpage
 
 <pre>
 python3 app.py
@@ -79,10 +81,10 @@ When you run app.py you will be greated by the following text:
 
     Welcome to the Art Tracker
     1. To find stolen count by a given artist, enter:
-    http://127.0.0.1:5100/artist/[ARTIST_NAME]
+    http://127.0.0.1:5100/artist/ARTIST_NAME
 
     2. To find artist of a given artwork, enter:
-    http://127.0.0.1:5100/artwork/[ARTWORK_TITLE]
+    http://127.0.0.1:5100/artwork/ARTWORK_TITLE
 
 Some examples of artists and artwork to search for are as follows:
 

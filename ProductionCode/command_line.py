@@ -36,8 +36,8 @@ def find_creator(name_of_artwork: str) -> str:
             otherwise None"""
     
     # Checks if the type of input is correct
-    if (type(name_of_artwork) != str):
-         raise TypeError("please provide a valid input")
+    if (any(char.isdigit() for char in name_of_artwork)):
+         raise TypeError("Do not include integers in your input")
 
     # by default assumes we use the stolen art csv
     data = load_data(DEFAULT_DATA_PATH)
@@ -61,8 +61,8 @@ def origin_count(origin: str) -> str:
             otherwise None"""
     
     # Checks if the type of input is correct
-    if (type(origin) != str):
-        raise TypeError("Please provide a valid input.")
+    if (any(char.isdigit() for char in origin)):
+        raise TypeError("Do not include integers in your input.")
 
     # artists data
     artist_data = load_data(ARTIST_DATA_PATH)

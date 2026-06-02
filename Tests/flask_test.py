@@ -25,7 +25,7 @@ class TestSOMETHING(unittest.TestCase):
         # Check that certain sentences appear
         self.assertIn("Welcome to the Art Tracker", text)
         self.assertIn("To find stolen count by a given artist", text)
-        self.assertIn("/artist/[ARTIST_NAME]", text)
+        self.assertIn("/artist/ARTIST_NAME", text)
     
     # This function tests that get_count_stolen_by_artist returns the correct value
     def test_get_count_stolen_by_artist(self):
