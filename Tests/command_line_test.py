@@ -1,3 +1,13 @@
+'''
+CS257: Software Design
+Flask Individual Deliverable
+Hilly Gangolf
+Spring 2026
+
+command_line_test.py: A program for testing command line functions
+'''
+
+
 import unittest
 from ProductionCode.command_line import *
 

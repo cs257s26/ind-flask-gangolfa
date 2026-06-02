@@ -2,7 +2,7 @@
 CS257: Software Design
 Flask Individual Deliverable
 Hilly Gangolf
-April 29, 2026
+Spring 2026
 
 app.py: A program for building a flask application
 Some starter code taken from flask intro lab

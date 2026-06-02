@@ -2,7 +2,7 @@
 CS257: Software Design
 Flask Individual Deliverable
 Hilly Gangolf
-April 29, 2026
+Spring 2026
 
 flask_test.py: A program for testing app.py
 Some starter code taken from flask intro lab

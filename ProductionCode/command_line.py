@@ -1,3 +1,13 @@
+'''
+CS257: Software Design
+Flask Individual Deliverable
+Hilly Gangolf
+Spring 2026
+
+command_line.py: contains functions that retrieve 
+infromation from datasets given a set of arguments
+'''
+
 import csv
 import sys
 from pathlib import Path
