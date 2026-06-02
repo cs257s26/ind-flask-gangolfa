@@ -11,6 +11,7 @@ Some starter code taken from flask intro lab
 from flask import Flask
 from ProductionCode.command_line import *
 import csv
+import sys
 
 app = Flask(__name__)
 
@@ -53,4 +54,11 @@ def python_bug(e):
     return "Something went wrong in our Python code"
 
 if __name__ == '__main__':
-    app.run(host="stearns.mathcs.carleton.edu", port=5101, debug=True)
+    port = 5101
+    if len(sys.argv) > 1:
+        try:
+            port = int(sys.argv[1])
+        except ValueError:
+            print("Port is not a valid integer")
+            
+    app.run(port=port,host="stearns.mathcs.carleton.edu")
