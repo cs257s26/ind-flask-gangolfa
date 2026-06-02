@@ -51,9 +51,10 @@ Further editing of **origin** and **artist** variables in datasource.py can be d
 #### Important files:
 
 - app.py: program for running flask application
-- Tests/flask_test.py: a program for testing my flask app
-- ProductionCode/command_line.py
-- ProductionCode/Data/artists.csv & Data/interpol_classified_stolen_art.csv: data files taken from my team project
+- command_line.py: contains functions that retrieve infromation from datasets given a set of arguments
+- flask_test.py: a program for testing my flask app
+- command_line_tests.py: a program for testing my command line arguments
+- artists.csv & Data/interpol_art.csv: data files taken from my team project
 
 ### How to run tests
 
