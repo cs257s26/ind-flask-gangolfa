@@ -16,41 +16,66 @@ import sys
 app = Flask(__name__)
 
 # This is the home page
-# Returns a list of instructions for running searches
 @app.route('/')
 def homepage():
+    """When one accesses the webpage at / this funciton displays
+    Args:
+        None
+    Returns:
+        string: A string containing directions for website"""
+    
     instructions = """
     <h1>Welcome to the Art Tracker</h1>
     <p>1. To find stolen count by a given artist, enter: <br>
-    http://[port number]/artist/ARTIST_NAME</p>
+    http://[Host][Port]/artist/ARTIST_NAME</p>
     
     <p>2. To find artist of a given artwork, enter: <br>
-    http://[port]/artwork/ARTWORK_TITLE</p>
+    http://[Host][Port]/artwork/ARTWORK_TITLE</p>
     """
     return instructions
 
 # This route is used to call count_stolen_by_artists() function
-# Returns a string including the number of stolen works
 @app.route('/artist/<string:artist>')
 def get_count_stolen_by_artist(artist:str) -> int:
+    """Returns a string including the number of stolen works
+    Args:
+        artist (str): Name of artist
+    Returns:
+        int: count of artworks that a given artist has had stolen"""
+    
     return f"The number of {artist} works that have been stolen is " + str(count_stolen_by_artist(artist))
 
 # This route is used to call find_creator() function
-# Returns a string including the creator of an artwrork
 @app.route('/artwork/<string:artwork>')
 def get_creator(artwork: str):
+    """Returns a string including the creator of an artwrork
+    Args:
+        artwork (str): Name of artwork
+    Returns:
+        str: name of artist"""
+    
     return f"The creator of {artwork} is " + find_creator(artwork)
 
-# This route is used to handle page_not_found errors
-# It returns a string with helpful advice for the user
 @app.errorhandler(404)
 def page_not_found(e):
+    """Used to handle page_not_found errors. This function returns a string with helpful advice for the user
+    Args:
+        e (int): this param is handled automatically by the decorator
+    Returns:
+        str: an error string"""
+    
     return "Sorry, wrong format. Check your Spelling"
 
-# This route is used to handle additional python errors
-# It returns a string with helpful advice for the user
+# Additional python errors
 @app.errorhandler(500)
 def python_bug(e):
+    """This function returns a string with helpful advice for the user
+    Args:
+        e (int): this param is handled automatically by the decorator
+    
+    Returns:
+        str: an error string"""
+    
     return "Something went wrong in our Python code"
 
 if __name__ == '__main__':

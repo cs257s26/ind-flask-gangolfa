@@ -45,7 +45,7 @@ The queries I created for this assignment are central to the theme of exploring 
    </pre>
    Further editing of **origin** and **artist** variables in datasource.py can be done in order to adjust what data is returned.
 
-## Flask Individual Deliverable | April 29, 2026
+## Flask Individual Deliverable | Revision Submitted June 2, 2026
 
 #### Important files:
 
@@ -57,21 +57,19 @@ The queries I created for this assignment are central to the theme of exploring 
 
 ### How to run tests
 
-command_line_test.py: tests that functions in command_line.py function correctly
+**Test command lines with command_line_test.py:**
 
 <pre>
 python3 -m unittest Tests.command_line_test
 </pre>
 
-flask_test.py: tests that app.py function correctly
+**Test app with flask_test.py:**
 
 <pre>
 python3 -m unittest Tests.flask_test
 </pre>
 
 #### How to run app
-
-app.py: the flask app that runs the webpage
 
 <pre>
 python3 app.py
@@ -81,21 +79,21 @@ When you run app.py you will be greated by the following text:
 
     Welcome to the Art Tracker
     1. To find stolen count by a given artist, enter:
-    http://127.0.0.1:5100/artist/ARTIST_NAME
+    http://[Host][Port]/artist/ARTIST_NAME
 
     2. To find artist of a given artwork, enter:
-    http://127.0.0.1:5100/artwork/ARTWORK_TITLE
+    http://[Host/IP][Port]/artwork/ARTWORK_TITLE
 
 Some examples of artists and artwork to search for are as follows:
 
-Artists:
+**Artists:**
 
 - Andy Warhol
 - Jackson Pollock
 - Pablo Picasso
 - Vincent van Gogh
 
-Artworks:
+**Artworks:**
 
 - Femme Assise
 - Bowl With Guitar On A Pedestal Table
