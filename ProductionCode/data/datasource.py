@@ -26,7 +26,7 @@ def connect():
         exit()
     return connection
 
-def get_artwork_given_origin(connection, origin: str) -> list:
+def get_artwork_given_origin(connection, origin: str) -> int:
     """Retrieves all artwork (and all the other information associated with an artwork and its artist) given the artist's country of origin.
 
     Args:
@@ -38,7 +38,7 @@ def get_artwork_given_origin(connection, origin: str) -> list:
     """
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM artist_data WHERE origin = %s;"
+        query = "SELECT COUNT(*) FROM artist_data WHERE origin = %s;"
         cursor.execute(query, (origin,))
         return cursor.fetchall()
     except Exception as e:

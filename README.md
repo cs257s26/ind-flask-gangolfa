@@ -40,11 +40,10 @@ The queries I created for this assignment are central to the theme of exploring 
    \copy artist_data FROM 'artists.csv' DELIMITER ',' CSV
    </pre>
 4. To run datasource:
-</pre>
-python3 datasource.py
-<pre>
-Further editing of **origin** and **artist** variables in datasource.py can be done in order to adjust what data is returned. 
-</pre>
+   <pre>
+   python3 datasource.py
+   </pre>
+   Further editing of **origin** and **artist** variables in datasource.py can be done in order to adjust what data is returned.
 
 ## Flask Individual Deliverable | April 29, 2026
 
@@ -54,7 +53,7 @@ Further editing of **origin** and **artist** variables in datasource.py can be d
 - command_line.py: contains functions that retrieve infromation from datasets given a set of arguments
 - flask_test.py: a program for testing my flask app
 - command_line_tests.py: a program for testing my command line arguments
-- artists.csv & Data/interpol_art.csv: data files taken from my team project
+- artists.csv & interpol_art.csv: data files taken from my team project
 
 ### How to run tests
 

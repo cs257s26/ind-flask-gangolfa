@@ -1,15 +1,15 @@
 '''
 CS257: Software Design
-Flask Individual Deliverable
+Database Individual Deliverable
 Hilly Gangolf
 April 29, 2026
 
-app.py: A program for building a flask application
+appSQL.py: A program for building a flask application
 Some starter code taken from flask intro lab
 '''
 
 from flask import Flask
-from ProductionCode.command_line import *
+from ProductionCode.data.datasource import *
 import csv
 import sys
 
@@ -31,15 +31,17 @@ def homepage():
 
 # This route is used to call count_stolen_by_artists() function
 # Returns a string including the number of stolen works
-@app.route('/artist/<string:artist>')
-def get_count_stolen_by_artist(artist:str) -> int:
-    return f"The number of {artist} works that have been stolen is " + str(count_stolen_by_artist(artist))
+@app.route('/origin/<string:origin>')
+def get_artwork_given_origin(origin:str) -> int:
+    connection = connect()
+    return f"The number of works that have been stolen from {origin} is " + str(get_artwork_given_origin(connection, origin))
 
 # This route is used to call find_creator() function
 # Returns a string including the creator of an artwrork
-@app.route('/artwork/<string:artwork>')
-def get_creator(artwork: str):
-    return f"The creator of {artwork} is " + find_creator(artwork)
+@app.route('/artist/<string:artist>')
+def get_artwork_given_artist(connection, artist: str):
+    connection = connect()
+    return f"{artist} is the creator of" + get_artwork_given_artist(connection, artist)
 
 # This route is used to handle page_not_found errors
 # It returns a string with helpful advice for the user
