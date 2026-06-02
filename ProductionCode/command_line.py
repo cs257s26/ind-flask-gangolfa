@@ -25,7 +25,7 @@ def load_data(data_path) -> list:
 
     return data
 
-def find_creator(name_of_artwork: str) -> str | None:
+def find_creator(name_of_artwork: str) -> str:
     """Returns who created the given piece of artwork
 
     Args:
@@ -50,7 +50,7 @@ def find_creator(name_of_artwork: str) -> str | None:
     # returns None if the artwork isn't in our database
     return None
 
-def origin_count(origin: str) -> str | None:
+def origin_count(origin: str) -> str:
     """Returns the number of artist in total from given orgin
 
     Args:
