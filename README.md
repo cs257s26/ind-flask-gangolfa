@@ -55,7 +55,17 @@ Further editing of **origin** and **artist** variables in datasource.py can be d
 - ProductionCode/command_line.py
 - ProductionCode/Data/artists.csv & Data/interpol_classified_stolen_art.csv: data files taken from my team project
 
-#### How to Run
+### How to run tests
+
+<pre>
+python3 -m Tests.command_line_tests
+</pre>
+
+#### How to run app
+
+<pre>
+python3 app.py
+</pre>
 
 When you run app.py you will be greated by the following text:
 
