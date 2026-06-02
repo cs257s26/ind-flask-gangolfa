@@ -53,4 +53,4 @@ def python_bug(e):
     return "Something went wrong in our Python code"
 
 if __name__ == '__main__':
-    app.run(port=5100)
+    app.run(host="stearns.mathcs.carleton.edu", port=5101, debug=True)
