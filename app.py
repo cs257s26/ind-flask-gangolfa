@@ -15,8 +15,6 @@ import sys
 
 app = Flask(__name__)
 
-# This is the home page
-# Returns a list of instructions for running searches
 @app.route('/')
 def homepage():
     instructions = """
@@ -29,8 +27,6 @@ def homepage():
     """
     return instructions
 
-# This route is used to call count_stolen_by_artists() function
-# Returns a string including the number of stolen works
 @app.route('/origin/<string:origin>')
 def return_artwork_given_origin(origin:str) -> int:
     connection = connect()
@@ -38,8 +34,6 @@ def return_artwork_given_origin(origin:str) -> int:
     return f"The number of works that have been stolen from {origin} is " + result
 
 
-# This route is used to call find_creator() function
-# Returns a string including the creator of an artwrork
 @app.route('/artist/<string:artist>')
 def return_artwork_given_artist(artist: str):
     connection = connect()
@@ -48,14 +42,10 @@ def return_artwork_given_artist(artist: str):
 
     return f"The following works by {artist} have been stolen: <br>" + "<br>".join(titles)
 
-# This route is used to handle page_not_found errors
-# It returns a string with helpful advice for the user
 @app.errorhandler(404)
 def page_not_found(e):
     return "Sorry, wrong format. Check your Spelling"
 
-# This route is used to handle additional python errors
-# It returns a string with helpful advice for the user
 @app.errorhandler(500)
 def python_bug(e):
     return "Something went wrong in our Python code"
