@@ -1,14 +1,17 @@
-"""
-datasource.py
-CS 257 - Software Design
-Code taken from sample from intro-db-lab
+'''
+CS257: Software Design
+Database Individual Deliverable
+Hilly Gangolf
+Spring 2026
 
-Uses se the psycopg2 Python library to 
-connect to a database and execute a query.
-"""
+datasource.py: Uses se the psycopg2 Python library to 
+connect to a database and execute a query
+
+Code taken from sample from intro-db-lab
+'''
 
 import psycopg2 as ps
-import psqlConfig as config
+import ProductionCode.data.psqlConfig as config
 
 def connect():
     """Establishes a connection to the database with the following credentials:
