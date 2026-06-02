@@ -1,82 +1,69 @@
 '''
 CS257: Software Design
-Flask Individual Deliverable
+Database Individual Deliverable
 Hilly Gangolf
-Spring 2026
+April 29, 2026
 
-app.py: A program for building a flask application
+appSQL.py: A program for building a flask application
 Some starter code taken from flask intro lab
 '''
 
 from flask import Flask
-from ProductionCode.command_line import *
+from ProductionCode.data.datasource import *
 import csv
 import sys
 
 app = Flask(__name__)
 
 # This is the home page
+# Returns a list of instructions for running searches
 @app.route('/')
 def homepage():
-    """When one accesses the webpage at / this funciton displays
-    Args:
-        None
-    Returns:
-        string: A string containing directions for website"""
-    
     instructions = """
     <h1>Welcome to the Art Tracker</h1>
     <p>1. To find stolen count by a given artist, enter: <br>
-    http://[Host][Port]/artist/ARTIST_NAME</p>
+    http://[port number]/artist/ARTIST_NAME</p>
     
     <p>2. To find artist of a given artwork, enter: <br>
-    http://[Host][Port]/artwork/ARTWORK_TITLE</p>
+    http://[port]/artwork/ARTWORK_TITLE</p>
     """
     return instructions
 
 # This route is used to call count_stolen_by_artists() function
-@app.route('/artist/<string:artist>')
-def get_count_stolen_by_artist(artist:str) -> int:
-    """Returns a string including the number of stolen works
-    Args:
-        artist (str): Name of artist
-    Returns:
-        int: count of artworks that a given artist has had stolen"""
-    
-    return f"The number of {artist} works that have been stolen is " + str(count_stolen_by_artist(artist))
+# Returns a string including the number of stolen works
+@app.route('/origin/<string:origin>')
+def get_artwork_given_origin(origin:str) -> int:
+    connection = connect()
+    return f"The number of works that have been stolen from {origin} is " + str(get_artwork_given_origin(connection, origin))
 
 # This route is used to call find_creator() function
-@app.route('/artwork/<string:artwork>')
-def get_creator(artwork: str):
-    """Returns a string including the creator of an artwrork
-    Args:
-        artwork (str): Name of artwork
-    Returns:
-        str: name of artist"""
-    
-    return f"The creator of {artwork} is " + find_creator(artwork)
+# Returns a string including the creator of an artwrork
+@app.route('/artist/<string:artist>')
+def get_artwork_given_artist(connection, artist: str):
+    connection = connect()
+    return f"{artist} is the creator of" + get_artwork_given_artist(connection, artist)
 
+# This route is used to handle page_not_found errors
+# It returns a string with helpful advice for the user
 @app.errorhandler(404)
 def page_not_found(e):
-    """Used to handle page_not_found errors. This function returns a string with helpful advice for the user
-    Args:
-        e (int): this param is handled automatically by the decorator
-    Returns:
-        str: an error string"""
-    
     return "Sorry, wrong format. Check your Spelling"
 
-# Additional python errors
+# This route is used to handle additional python errors
+# It returns a string with helpful advice for the user
 @app.errorhandler(500)
 def python_bug(e):
-    """This function returns a string with helpful advice for the user
-    Args:
-        e (int): this param is handled automatically by the decorator
-    
-    Returns:
-        str: an error string"""
-    
     return "Something went wrong in our Python code"
 
 if __name__ == '__main__':
-    app.run()
+    # Default port if none is provided
+    port = 5000 
+    
+    # Check if an argument was passed
+    if len(sys.argv) > 1:
+        try:
+            port = int(sys.argv[1])
+        except ValueError:
+            print("Port must be a valid integer. Using default port 5000.")
+
+    app.run(port=port, host="stearns.mathcs.carleton.edu")
