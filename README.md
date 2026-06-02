@@ -19,8 +19,7 @@ The queries I created for this assignment are central to the theme of exploring 
 
 1. Go to [JupyterHub server on fern](https://fern.mathcs.carleton.edu/jupyter/hub/login) and log in with Carleton credentials.
 2. Navigate to the correct directory: cs257/ind-flask-gangolfa
-3. Load data tables\
-   The files createtable.sql and datasource.py are located in the ProductionCode/Data directory. The tables, interpol_data & artist_data may already be loaded into sterns. To check, you can use:
+3. The data tables (interpol_data & artist_data) may already be loaded into sterns. To check, you can use:
    <pre>
    psql 
    \dt
@@ -39,11 +38,15 @@ The queries I created for this assignment are central to the theme of exploring 
    \copy interpol_data FROM 'interpol_art.csv' DELIMITER ',' CSV
    \copy artist_data FROM 'artists.csv' DELIMITER ',' CSV
    </pre>
-4. To run datasource:
+4. Run app.py
    <pre>
-   python3 datasource.py
+   python3 app.py
    </pre>
-   Further editing of **origin** and **artist** variables in datasource.py can be done in order to adjust what data is returned.
+### Test app with flask_test.py:
+
+<pre>
+python3 -m unittest Tests.flask_test
+</pre>
 
 ## Flask Individual Deliverable | Revision Submitted June 2, 2026
 
