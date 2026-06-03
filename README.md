@@ -50,9 +50,9 @@ The queries I created for this assignment are central to the theme of exploring 
    \copy interpol_data FROM 'interpol_art.csv' DELIMITER ',' CSV
    \copy artist_data FROM 'artists.csv' DELIMITER ',' CSV
    </pre>
-5. Run app.py
+5. Run app.py using command line args to pass in a port number. The default port is 5000.
    <pre>
-   python3 app.py
+   python3 app.py [Pass in port number here]
    </pre>
 
    You will then be prompted by the following instructions:
