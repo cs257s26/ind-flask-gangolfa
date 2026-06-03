@@ -1,6 +1,6 @@
 '''
 CS257: Software Design
-Flask Individual Deliverable
+Databse Individual Deliverable
 Hilly Gangolf
 Spring 2026
 
@@ -28,13 +28,13 @@ class TestSOMETHING(unittest.TestCase):
         self.assertIn("http://[Host][Port]/artist/ARTIST_NAME", text)
 
     def return_artwork_given_origin(self):
-        """ ADD COMMENT """
+        """ This function tests that the origin flask route correctly returns the count of stolen art from a given origin """
         self.app = app.test_client() 
         response = self.app.get('/origin/France', follow_redirects=True)
         self.assertEqual(b'The number of works that have been stolen from France is 10', response.data)
 
     def return_artwork_given_artist(self):
-        """ ADD COMMENT """
+        """ This function tests that the artist flask route correctly returns the titles of stolen art from a given artist """
         self.app = app.test_client() 
         response = self.app.get('/artist/Claude Monet', follow_redirects=True)
         # Check that certain artworks appear

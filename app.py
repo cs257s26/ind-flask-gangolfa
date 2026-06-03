@@ -4,7 +4,7 @@ Database Individual Deliverable
 Hilly Gangolf
 April 29, 2026
 
-appSQL.py: A program for building a flask application
+app.py: A program for building a flask application
 Some starter code taken from flask intro lab
 '''
 

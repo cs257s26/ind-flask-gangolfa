@@ -7,6 +7,15 @@ Git Repo: ind-flask-gangolfa
 
 ## Database Individual Deliverable | Revision Submitted June 3, 2026
 
+### Important files:
+
+- app.py: program for running flask application
+- datasource.py: contains functions that retrieve infromation from datasets given a set of arguments
+- createtable.sql: creates the data tables to copy data into
+- psqlConfig.py: contains the credentials for connecting to the database
+- flask_test.py: a program for testing my flask app
+- artists.csv & interpol_art.csv: data files taken from my team project
+
 ### Write up:
 
 I decided to represent my data using the same columns and headings that were in the original csv file. All of the columns were very important to the project as a whole, so I did not want to change them. Aside from removing headers, there were no other superfluous detials to remove.\
@@ -15,7 +24,7 @@ The queries I created for this assignment are central to the theme of exploring 
 - **get_artwork_given_origin(connection, origin)** --> My first query returns the titles of stolen artwork made by a given artist. This relates to the fourth user story for our team deliverable. It would be useful for those doing research into a specific artist, or for someone who wants to know what artist is most often stolen.
 - **get_count_given_artist(connection, artist)** --> My second query returns the count of stolen artwork given a country of origin. This relates to the second user story we wrote for our team deliverable, and could help someone doing art research that is specific to a certain country or region.
 
-### How to run data set in Sterns:
+### How to run flask app & data queries in Stearns:
 
 1. Go to [JupyterHub server on fern](https://fern.mathcs.carleton.edu/jupyter/hub/login) and log in with Carleton credentials.
 
@@ -74,7 +83,7 @@ python3 -m unittest Tests.flask_test
 
 ## Flask Individual Deliverable | Revision Submitted June 2, 2026
 
-#### Important files:
+### Important files:
 
 - app.py: program for running flask application
 - command_line.py: contains functions that retrieve infromation from datasets given a set of arguments
@@ -96,7 +105,7 @@ python3 -m unittest Tests.command_line_test
 python3 -m unittest Tests.flask_test
 </pre>
 
-#### How to run app
+### How to run app
 
 <pre>
 python3 app.py
