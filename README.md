@@ -5,15 +5,15 @@ Hilly Gangolf\
 Spring 2026\
 Git Repo: ind-flask-gangolfa
 
-## Database Individual Deliverable | May 8, 2026
+## Database Individual Deliverable | Revision Submitted June 3, 2026
 
 ### Write up:
 
 I decided to represent my data using the same columns and headings that were in the original csv file. All of the columns were very important to the project as a whole, so I did not want to change them. Aside from removing headers, there were no other superfluous detials to remove.\
 The queries I created for this assignment are central to the theme of exploring stolen artwork
 
-- **get_artwork_given_origin(connection, origin)** --> My first query returns informations reguarding stolen artwork made by a given artist. This relates to the fourth user story for our team deliverable. It would be useful for those doing research into a specific artist, or for someone who wants to know what artist is most often stolen.
-- **get_artwork_given_artist(connection, artist)** --> My second query returns all stolen artwork given a country of origin. This relates to the second user story we wrote for our team deliverable, and could help someone doing art research that is specific to a certain country or region.
+- **get_artwork_given_origin(connection, origin)** --> My first query returns the titles of stolen artwork made by a given artist. This relates to the fourth user story for our team deliverable. It would be useful for those doing research into a specific artist, or for someone who wants to know what artist is most often stolen.
+- **get_count_given_artist(connection, artist)** --> My second query returns the count of stolen artwork given a country of origin. This relates to the second user story we wrote for our team deliverable, and could help someone doing art research that is specific to a certain country or region.
 
 ### How to run data set in Sterns:
 
@@ -42,6 +42,17 @@ The queries I created for this assignment are central to the theme of exploring 
    <pre>
    python3 app.py
    </pre>
+
+   You will then be prompted by the following text:
+   <pre>
+   Welcome to the Art Tracker
+   1. To find stolen count by a given artist, enter:
+   http://[Host][Port]/artist/ARTIST_NAME
+   
+   2. To find artist of a given artwork, enter:
+   http://[Host][Port]/artwork/ARTWORK_TITLE
+   </pre>
+
 ### Test app with flask_test.py:
 
 <pre>

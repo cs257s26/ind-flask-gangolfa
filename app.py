@@ -20,17 +20,17 @@ def homepage():
     instructions = """
     <h1>Welcome to the Art Tracker</h1>
     <p>1. To find stolen count by a given artist, enter: <br>
-    http://[Host][Port]/artist/ARTIST_NAME</p>
+    http://[Host][Port]/origin/COUNTRY_NAME</p>
     
     <p>2. To find artist of a given artwork, enter: <br>
-    http://[Host][Port]/artwork/ARTWORK_TITLE</p>
+    http://[Host][Port]/artist/ARTIST_NAME</p>
     """
     return instructions
 
 @app.route('/origin/<string:origin>')
 def return_artwork_given_origin(origin:str) -> int:
     connection = connect()
-    result = str(get_artwork_given_origin(connection, origin)[0][0])
+    result = str(get_count_given_origin(connection, origin)[0][0])
     return f"The number of works that have been stolen from {origin} is " + result
 
 
