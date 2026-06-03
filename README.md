@@ -51,6 +51,8 @@ The queries I created for this assignment are central to the theme of exploring 
    
    2. To find artwork associated with a given artist, enter:
    http://[Host][Port]/artist/ARTIST_NAME
+   
+
    </pre>
 
 ### Test app with flask_test.py:

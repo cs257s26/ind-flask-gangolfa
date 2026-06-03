@@ -29,7 +29,7 @@ def connect():
         exit()
     return connection
 
-def get_artwork_given_origin(connection, origin: str) -> int:
+def get_count_given_origin(connection, origin: str) -> int:
     """Retrieves a count of artwork stolen from a given country of origin.
 
     Args:
@@ -37,7 +37,7 @@ def get_artwork_given_origin(connection, origin: str) -> int:
         origin (str) - the country of origin
 
     Returns:
-        list - a list of all artwork with an artist from the desired origin.
+        int - a count of stolen artwork.
     """
     try:
         cursor = connection.cursor()
@@ -49,14 +49,14 @@ def get_artwork_given_origin(connection, origin: str) -> int:
         return None
     
 def get_artwork_given_artist(connection, artist: str) -> list:
-    """Retrieves artist (and all the other information associated with an artwork) given an artwork.
+    """Retrieves the titles of artwork associated with an artist.
 
     Args:
         connection (psycopg2.connection) - the connection to the database
-        artist (str) - the artist being searched for
+        artist (str) - name of artist
 
     Returns:
-        list - a list of artwork by a given artist.
+        list - a list of artwork titles created by a given artist.
     """
     try:
         cursor = connection.cursor()
@@ -73,7 +73,7 @@ def main():
     connection = connect()
 
     # How many artists have an origin of the United Kingdom?
-    results = get_artwork_given_origin(connection, 'United Kingdom')
+    results = get_count_given_origin(connection, 'United Kingdom')
     
     if results is not None :
         print()
