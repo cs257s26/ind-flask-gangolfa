@@ -18,8 +18,11 @@ The queries I created for this assignment are central to the theme of exploring 
 ### How to run data set in Sterns:
 
 1. Go to [JupyterHub server on fern](https://fern.mathcs.carleton.edu/jupyter/hub/login) and log in with Carleton credentials.
-2. Navigate to the correct directory: cs257/ind-flask-gangolfa
-3. The data tables (interpol_data & artist_data) may already be loaded into sterns. To check, you can use:
+
+2. ssh into stearns in the terminal like so: ssh [your username]@stearns.mathcs.carleton.edu. Type in your Carleton password when prompted.
+
+3. Navigate to the correct directory: cs257/ind-flask-gangolfa
+4. The data tables (interpol_data & artist_data) may already be loaded into sterns. To check, you can use:
    <pre>
    psql 
    \dt
@@ -38,12 +41,12 @@ The queries I created for this assignment are central to the theme of exploring 
    \copy interpol_data FROM 'interpol_art.csv' DELIMITER ',' CSV
    \copy artist_data FROM 'artists.csv' DELIMITER ',' CSV
    </pre>
-4. Run app.py
+5. Run app.py
    <pre>
    python3 app.py
    </pre>
 
-   You will then be prompted by the following text:
+   You will then be prompted by the following instructions:
    <pre>
    Welcome to the Art Tracker
    1. To find stolen art count of a given country, enter:
@@ -52,7 +55,15 @@ The queries I created for this assignment are central to the theme of exploring 
    2. To find artwork associated with a given artist, enter:
    http://[Host][Port]/artist/ARTIST_NAME
    
-
+   Countries to search for:
+   - France
+   - Spain
+   - United Kingdom
+   
+   Artist to search for:
+   - Andy Warhol
+   - Jackson Pollock
+   - Vincent van Gogh
    </pre>
 
 ### Test app with flask_test.py:

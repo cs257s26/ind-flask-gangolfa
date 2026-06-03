@@ -29,7 +29,7 @@ def homepage():
     <ul>
         <li>France</li>
         <li>Spain</li>
-        <li>Great Britian</li>
+        <li>United Kingdom</li>
     </ul>
 
     <p><b>Artist to search for: </b></p>
