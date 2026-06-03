@@ -21,8 +21,13 @@ Git Repo: ind-flask-gangolfa
 I decided to represent my data using the same columns and headings that were in the original csv file. All of the columns were very important to the project as a whole, so I did not want to change them. Aside from removing headers, there were no other superfluous detials to remove.\
 The queries I created for this assignment are central to the theme of exploring stolen artwork
 
-- **get_artwork_given_origin(connection, origin)** --> My first query returns the titles of stolen artwork made by a given artist. This relates to the fourth user story for our team deliverable. It would be useful for those doing research into a specific artist, or for someone who wants to know what artist is most often stolen.
-- **get_count_given_artist(connection, artist)** --> My second query returns the count of stolen artwork given a country of origin. This relates to the second user story we wrote for our team deliverable, and could help someone doing art research that is specific to a certain country or region.
+- **get_artwork_given_origin(connection, origin)** --> My first query returns the titles of stolen artwork made by a given artist. This relates to the fourth user story for our team deliverable. It would be useful for those doing research into a specific artist, or for someone who wants to know what artist is most often stolen.\
+
+  **User Story:** "Miles: 4. As an art historian, I want to know which artwork by a particular artist has been stolen, so I can research the context of each incident individually through the artist's life. Acceptance criteria: Entering the name of an artist returns a list containing each artwork's title. Acceptance tests: René Magritte -> ["Les Bijoux Indiscrets", "Moments Inoubliables Du Cinema", "Bust Of A Soldier", "Morning Promises"]"
+
+- **get_count_given_artist(connection, artist)** --> My second query returns the count of stolen artwork given a country of origin. This relates to the second user story we wrote for our team deliverable, and could help someone doing art research that is specific to a certain country or region.\
+
+  **User Story:** "Clark: 2. As a french art researcher, I want to see how much art has been stolen from French artists and then see who those artworks are. Acceptance Criteria: Given a country return the number of artists and art stolen from an artists of that countries origin. Acceptance tests: France → # of Artist from France with stolen art: 3 # of Art pieces stolen with artists from France: 74 Bob → “Bob” is not a country with data"
 
 ### How to run flask app & data queries in Stearns:
 
