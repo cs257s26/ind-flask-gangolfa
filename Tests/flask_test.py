@@ -24,8 +24,8 @@ class TestSOMETHING(unittest.TestCase):
 
         # Check that certain sentences appear
         self.assertIn("Welcome to the Art Tracker", text)
-        self.assertIn("To find stolen count by a given artist", text)
-        self.assertIn("/artist/ARTIST_NAME", text)
+        self.assertIn("To find stolen art count of a given country", text)
+        self.assertIn("http://[Host][Port]/artist/ARTIST_NAME", text)
 
     def return_artwork_given_origin(self):
         """ ADD COMMENT """
