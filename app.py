@@ -19,10 +19,10 @@ app = Flask(__name__)
 def homepage():
     instructions = """
     <h1>Welcome to the Art Tracker</h1>
-    <p>1. To find stolen count by a given artist, enter: <br>
+    <p>1. To find stolen art count of a given country, enter: <br>
     http://[Host][Port]/origin/COUNTRY_NAME</p>
     
-    <p>2. To find artist of a given artwork, enter: <br>
+    <p>2. To find artwork associated with a given artist, enter: <br>
     http://[Host][Port]/artist/ARTIST_NAME</p>
     """
     return instructions
