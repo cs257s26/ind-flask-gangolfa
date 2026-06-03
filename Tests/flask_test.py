@@ -38,9 +38,9 @@ class TestSOMETHING(unittest.TestCase):
         self.app = app.test_client() 
         response = self.app.get('/artist/Claude Monet', follow_redirects=True)
         # Check that certain artworks appear
-        self.assertIn("Reflections On Water", reponse)
-        self.assertIn("The Plain Of Gennevillers", reponse)
-        self.assertIn("Torrent De La Creuse", reponse)
+        self.assertIn("Reflections On Water", response)
+        self.assertIn("The Plain Of Gennevillers", response)
+        self.assertIn("Torrent De La Creuse", response)
 
     def test_page_not_found(self):
         """ This function tests that 404 error returns the correct message """
