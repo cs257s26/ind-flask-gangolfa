@@ -46,11 +46,11 @@ The queries I created for this assignment are central to the theme of exploring 
    You will then be prompted by the following text:
    <pre>
    Welcome to the Art Tracker
-   1. To find stolen count by a given artist, enter:
-   http://[Host][Port]/artist/ARTIST_NAME
+   1. To find stolen art count of a given country, enter:
+   http://[Host][Port]/origin/COUNTRY_NAME
    
-   2. To find artist of a given artwork, enter:
-   http://[Host][Port]/artwork/ARTWORK_TITLE
+   2. To find artwork associated with a given artist, enter:
+   http://[Host][Port]/artist/ARTIST_NAME
    </pre>
 
 ### Test app with flask_test.py:

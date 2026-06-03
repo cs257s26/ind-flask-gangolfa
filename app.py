@@ -24,6 +24,20 @@ def homepage():
     
     <p>2. To find artwork associated with a given artist, enter: <br>
     http://[Host][Port]/artist/ARTIST_NAME</p>
+
+    <p>Countries to search for: </p>
+    <ul>
+        <li>France</li>
+        <li>Spain</li>
+        <li>Great Britian</li>
+    </ul>
+
+    <p>Artist to search for: </p>
+    <ul>
+        <li>Andy Warhol</li>
+        <li>Jackson Pollock</li>
+        <li>Vincent van Gogh</li>
+    </ul>
     """
     return instructions
 
