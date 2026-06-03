@@ -2,7 +2,7 @@
 CS257: Software Design
 Database Individual Deliverable
 Hilly Gangolf
-April 29, 2026
+Spring 2026
 
 app.py: A program for building a flask application
 Some starter code taken from flask intro lab
@@ -17,6 +17,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
+    """When one accesses the webpage at / this funciton displays
+    Args:
+        None
+    Returns:
+        string: A string containing directions for website"""
+
+
     instructions = """
     <h1>Welcome to the Art Tracker</h1>
     <p>1. To find stolen art count of a given country, enter: <br>
@@ -42,7 +49,13 @@ def homepage():
     return instructions
 
 @app.route('/origin/<string:origin>')
-def return_artwork_given_origin(origin:str) -> int:
+def return_artwork_given_origin(origin:str) -> str:
+    """Returns a count of stolen works from a given country of origin.
+    Args:
+        origin (str): Name of country
+    Returns:
+        str: string containing count of artworks that have been stolen"""
+    
     connection = connect()
     result = str(get_count_given_origin(connection, origin)[0][0])
     return f"The number of works that have been stolen from {origin} is " + result
@@ -50,6 +63,12 @@ def return_artwork_given_origin(origin:str) -> int:
 
 @app.route('/artist/<string:artist>')
 def return_artwork_given_artist(artist: str):
+    """Returns a list containing titles of artwork associated with a given artist.
+    Args:
+        artist (str): Name of artist
+    Returns:
+        str: string containing titles"""
+    
     connection = connect()
     result = get_artwork_given_artist(connection, artist)
     titles = [item[0] for item in result]
@@ -58,10 +77,24 @@ def return_artwork_given_artist(artist: str):
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """This function returns a string with helpful advice for the user
+    Args:
+        e (int): this param is handled automatically by the decorator
+    
+    Returns:
+        str: an error string"""
+    
     return "Sorry, wrong format. Check your Spelling"
 
 @app.errorhandler(500)
 def python_bug(e):
+    """This function returns a string with helpful advice for the user
+    Args:
+        e (int): this param is handled automatically by the decorator
+    
+    Returns:
+        str: an error string"""
+    
     return "Something went wrong in our Python code"
 
 if __name__ == '__main__':
